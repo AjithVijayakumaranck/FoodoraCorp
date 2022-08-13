@@ -1,0 +1,275 @@
+<body>
+
+    <!-- Loader -->
+    {{!-- <div id="preloader">
+        <div id="status">
+            <div class="spinner"></div>
+        </div>
+    </div> --}}
+
+    <!-- Navigation Bar-->
+
+    <!-- End Navigation Bar-->
+
+
+    <div class="wrapper mt-0 pt-3">
+        <div class="container-fluid">
+
+            <div class="notusing">
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="icon-contain">
+                                            <div class="row">
+                                                <div class="col-2 align-self-center">
+                                                    {{!-- <i class=" "></i> --}}
+                                                    <i class="fa-solid fa-burger text-gradient-success"></i>
+                                                </div>
+                                                <div class="col-10 text-right">
+                                                    <h5 class="mt-0 mb-1">{{totalOrders.[0].total}}</h5>
+                                                    <p class="mb-0 font-12 text-muted">No of Cusines Sold</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <div class="card-body justify-content-center">
+                                        <div class="icon-contain">
+                                            <div class="row">
+                                                <div class="col-2 align-self-center">
+                                                    {{!-- <i class="far fa-gem text-gradient-danger"></i> --}}
+                                                   <i class="fa-solid fa-bowl-food text-gradient-danger"></i>
+                                                </div>
+                                                <div class="col-10 text-right">
+                                                    <h5 class="mt-0 mb-1">{{totalCheckouts}}</h5>
+                                                    <p class="mb-0 font-12 text-muted">Orders</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="icon-contain">
+                                            <div class="row">
+                                                <div class="col-2 align-self-center">
+                                                    {{!-- <i class="fas fa-cash text-gradient-warning"></i> --}}
+                                                    <i class="fa-solid fa-cash-register text-gradient-warning"></i>
+                                                </div>
+                                                <div class="col-10 text-right">
+                                                    <h5 class="mt-0 mb-1">{{totalPrice}}</h5>
+                                                    <p class="mb-0 font-12 text-muted">Total Turnover</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card col-lg-12 text-start  text-white">
+                                <div class="card-body  ">
+                                    {{!-- <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+                                        <label class="btn btn-primary btn-sm active">
+                                            <input type="radio" name="options" id="option1" checked=""> This Week
+                                        </label>
+                                        <label class="btn btn-primary btn-sm">
+                                            <input type="radio" name="options" id="option2"> Last Month
+                                        </label>
+                                    </div> --}}
+                                    <h5 class="header-title mb-4 mt-0 text-dark mb-4 mt-">Sale Chart</h5>
+                                <div class="row">
+                                        <div class="col-lg-6">
+
+                                    <canvas id="lineChart" height="" class=" text-white "></canvas>
+                                    </div>
+                                    <div class="col-lg-3 col-sm-6  offset-lg-2  offset-sm-3 mt-sm-5 mt-lg-0">
+
+                                    <canvas id="BarCharts" height="" class=" text-white "></canvas>
+                                    </div>
+                                </div>
+                                   
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div> <!-- end container -->
+             
+
+                </div>
+                
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <h4 class="mt-0 header-title">Sales</h4>
+                            
+
+                                <table id="example" class="display nowrap " style="width:100%">
+        <thead style="background-color: #ff0029 !important; " class="text-white ps-5 fw-bold">
+            <tr>
+                <th>SL no</th>
+                <th>Date</th>
+                <th>Dish</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Total Amount</th>
+                
+            </tr>
+        </thead class="text-center ps-5">
+        {{#each salesReport}}
+        <tbody>
+            <tr>
+                
+                <td>{{inc @index}}</td>
+                <td>{{this._id.date}}</td>
+                <td>{{this._id.productName}}</td>
+                <td>{{this._id.Price}}</td>
+                <td>{{this.total}}</td>
+                <td>{{this.totalAmount}}</td>
+                {{!-- <td>$320,800</td> --}}
+            </tr>
+          </tbody>
+          {{/each}}
+    </table>
+                               
+                                  {{!-- <button onclick="HtmlTOExcel('xlsx')">Export HTML to EXCEL</button> --}}
+
+
+                            </div>
+                        </div>
+                    </div> <!-- end col -->
+                </div> <!-- end row -->
+            </div>
+            <!-- end wrapper -->
+
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            © 2022 FoodoraCORP..
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+
+            <!-- End Footer -->
+
+
+
+ 
+
+            {{!-- <script src="//code.jquery.com/jquery-3.5.1.js"></script> --}}
+            <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+                <!-- Datatable -->
+        {{!-- <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+        <script src="//cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script src="//cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+        <script src="//cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script> --}}
+
+
+        
+ <script>
+
+$(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );
+    </script>
+
+        
+          
+
+
+
+
+            <script>
+                const labels2 = [
+                    'Razorpay',
+                    'Cod',
+                ];
+
+
+
+
+                const data2 = {
+                    labels: labels2,
+                    datasets: [{
+                        label: ' ',
+                        backgroundColor: ['#2f2f2f','#ff0029',
+                            
+                            '#ff6c00',],
+                        borderColor: '#fff',
+                        data: [{{totalcodPay}},{{totalrazoPay}}],
+                    }]
+                };
+
+                const config2 = {
+                    type: 'doughnut',
+                    data: data2,
+                    options: {}
+                };
+            </script>
+
+            <script>
+                const labels = [
+                    'Cash on Delivery',
+                    'Razorpay',
+                ];
+
+
+
+
+                const data = {
+                    labels: labels,
+                    datasets: [{
+                        label: [
+                        'Cod','Razorpay'],
+                        backgroundColor: ['#ff0029',
+                            '#2f2f2f',
+                            '#ff6c00',],
+                        borderColor: '#fff',
+                        data: [{{totalrazoPay}},{{totalcodPay}}, 0,35],
+                    }]
+                };
+
+                const config = {
+                    type: 'horizontalBar',
+                    data: data,
+                    options: {}
+                };
+            </script>
+
+            <script>
+                const myChart = new Chart(
+                    document.getElementById("lineChart"),
+                    config
+                );
+            </script>
+            <script>
+                const barchart = new Chart(
+                    document.getElementById("BarCharts"),
+                    config2
+                );
+            </script>

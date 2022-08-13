@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg  navbar-dark bg-dark  " style="background-color: #000000 !important;" id="homeTop">
+    <div class="container-fluid container-lg">
+        <a class="navbar-brand  " href="#">
+
+            <img src="/images/Assets/TEXT OR.png" alt="" width="300px"
+                class="align-text-top mx-auto mx-lg- mt-0 text-center img-brand">
+        </a>
+        <div>
+            <button class="navbar-toggler outline-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span aria-expanded="false"><img src="/images/menuham.svg" alt=""></span>
+            </button>
+             
+                <div class="navbar-nav d-none d-lg-flex justify-content-end">
+                    {{!-- <a class="nav-link text-white nav-text" href="#"> <span class="me-1"><img src="/images/Vector.svg"
+                                alt="" class="icon1"></span> Offers</a> --}}
+                    <a class="nav-link text-white nav-text" href="/signup"> <span class="me-1"><img src="/images/Vector2.svg"
+                                alt="" class="icon1"></span>Signup</a>
+                    <a class="nav-link text-white nav-text" href="/log" tabindex="-1" aria-disabled="true"> <span
+                            class="me-1"><img src="/images/bx_log-out.svg" alt="" class="icon1"></span>Login</a>
+                </div>
+           
+            {{!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button> --}}
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                    <h5 id="offcanvasRightLabel">Menu</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body d-block d-lg-none">
+                    <div class="navbar-nav text-black">
+                        {{!-- <a class="nav-link text-dark mt-4 mt-lg-0 " href="#"> Offers</a> --}}
+                        <a class="nav-link text-dark " href="signup"  data-bs-toggle="modal" data-bs-target="#exampleModal">Signup</a>
+                        <a class="nav-link text-dark " href="/log" tabindex="-1" aria-disabled="true"> Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+

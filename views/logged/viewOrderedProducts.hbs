@@ -1,0 +1,71 @@
+ <div class="container">
+ <div class="col-lg-12  col-sm-12 text-end  mt-5 pt-4" >
+    <div class="text-start">
+
+         <h2 class="text-secondary fw-bold mb-4 m">Cusines you<span class="primaryText"> Orderd </span></h2>
+</div>
+         <div class="text-start overflow-auto">
+              <table class="table" id="OrderTable">
+            
+  <thead class=" SeeSpan text-white text-center ">
+   
+      <th scope="col"><h6>#</h6></th>
+      <th scope="col"><h6>Cusine Name</h6></th>
+      
+      <th scope="col"><h6>Quantity</h6></th>
+      <th scope="col"><h6>Veg/Non-veg</h6></th>
+      <th scope="col"><h6>Flavour</h6></th>
+      <th scope="col"><h6>Cusine Types</h6></th>
+      <th scope="col"><h6>Details</h6></th>
+      <th scope="col"><h6>Restaurant</h6></th>
+      <th scope="col"><h6>Price per Unit</h6></th>
+
+   
+  </thead>
+
+  <tbody class="text-center">
+      
+{{#each userDetails}}
+   
+    <tr >
+
+      <td class="overflow-auto"><h6>{{@index}}</h6></td>
+      <td class="overflow-auto"><h6>{{this.Products.cusineName}}</h6></td>
+      {{!-- <td class="overflow-auto"><h6>{{this._id}}</h6></td> --}}
+      <td class="overflow-auto"><h6>{{this.quantity}}</h6></td>
+     
+      <td class="overflow-auto"><div><h6>{{this.Products.Veg}}</h6></div></td>
+      <td class="overflow-auto"><h6>{{this.Products.Region}}</h6></td>
+      <td class="overflow-auto"><h6>{{this.Products.SubCat}}</h6></td>
+     
+      
+    
+      <td class="overflow-auto"><h6>{{this.Products.cusineDetails}}</h6></td>
+      <td class="overflow-auto "><h6>{{this.Products.Restaurant.admin.RestaurantName}}</h6><div>
+
+   
+      <td class="overflow-auto"><h6>₹ {{this.Products.Price}}</h6></td>
+</tr>
+{{/each}}
+
+ 
+  </tbody>
+
+</table>
+</div>
+</div>
+  
+         </div>
+   
+   
+       
+
+
+
+    </div>
+  
+
+
+
+</section>
+  

@@ -1,0 +1,31 @@
+
+<DIV class="container">
+<section class="row">
+  <div class="col-lg-6 p-5 mt-5   overflow-hidden">
+    <img src="/images/undraw_authentication_re_svpt.svg" style="width:27rem; height:auto ; margin-top:5rem !important;" alt="" class="img-fluid mt-5 pt-5 ps-5">
+  </div>
+  <div class="col-lg-6">
+
+  <div class="mt-2 col-12 p-5 mt-5">
+    <div class="text-start ps-5 mt-5 pt-5"  style=" margin-top:9rem !important;">
+      <h1 class="text-secondary text-start"><span class="primaryText">Few more steps {{userdetails.userExist.Phone}}</span></h1>
+    </div>
+    <div class="text-start ps-5 pt-1">
+{{!-- <h5 class="text-secondary text-start">Enter new <span class="primaryText">password</span>  <span class=""></span></h5> --}}
+    </div>
+ <div class="p-5 pt-1">
+  <form action="/reEnterPassword/{{userdetails.userExist.Phone}}" method="post">
+     <label for="inputAddress" class="form-label">Enter new password</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="New Password" name="Password" required>
+    <div class="text-center pt-3">
+      <button type="submit" class="btn btn-primary SeeSpan ">Submit</button>
+    </div>
+    </form>
+ </div>
+  </div>
+  </div>
+ 
+</section>
+</DIV>
+
+

@@ -1,0 +1,316 @@
+
+*{
+  font-family: 'Roboto', sans-serif;
+}
+
+body{
+  padding: 0;
+  margin: 0 !important;
+}
+
+.nav-properties{
+  height:6rem !important;
+  border-bottom:.5px solid #2f2f2f;
+
+}
+
+.mainButton-Properties {
+  animation : Expand .5s linear ;
+  background-color: #FF6C00 !important;
+}
+
+.brandProperties {
+  width: 100vw;
+}
+
+.Carousalindicatorproperties {
+  width:.6rem !important;
+  height:.6rem !important;
+  border-radius: 100%;
+}
+
+.main-carousal {
+  font-size: 5.5rem !important;
+ 
+
+}
+
+.inputProperties {
+  border-color: #FF6C00 !important;
+}
+
+.addBg {
+  position: relative;
+}
+
+.ContentAdd {
+  position: absolute;
+  top:3rem;
+}
+
+h1 {
+ font-family: 'Roboto', sans-serif;
+ font-weight: bold !important;
+ color: #2b2b2b !important;
+}
+h4 {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold !important;
+  color: #2b2b2b !important;
+ }
+h5 {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold !important;
+  color: #2b2b2b !important;
+ }
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+ font-weight: bold !important;
+ color: #2b2b2b !important;
+}
+h6 {
+  font-family: 'Roboto', sans-serif;
+ font-weight: normal !important;
+ font-size:  smaller !important;
+  color: #2b2b2b ;
+}
+.alignItems{
+  vertical-align:middle !important;
+}
+
+
+.textColor {
+  color:#FF6C00 ;
+}
+#addressBook.textColor2 {
+  color:#FF6C00 !important;
+  font-size:70px;
+}
+ 
+.BurgText {
+  color:#2f2f2f !important;
+  text-align: right;
+}
+
+.BurgSpan {
+  color: #FF6C00;
+}
+
+.iconSize {
+  width: 4rem !important;
+  height: 4rem !important;
+}
+
+.upArrowSize {
+  width: 4rem !important;
+  height: 4rem !important;
+}
+
+.primaryText {
+  color: #FF6C00 !important;
+
+}
+
+.loginBtn {
+  height: auto !important;
+  width: 11rem !important;
+}
+
+.icon1 {
+  height: 1rem !important;
+  width:auto !important;
+}
+
+.nav-text {
+  font-size: .7rem !important;
+}
+
+.form-box {
+  border-radius: 25px 25px 25px 25px !important;
+  padding-left: 2rem !important;
+  height: 3rem !important;
+  font-size: 1rem !important;
+}
+
+.img-brand {
+  height: auto !important;
+  width: 10rem !important;
+}
+
+.thumbnailIcon {
+  /* height: 10rem !important;
+  width: 10rem !important; */
+  margin:4rem 2rem 1rem 2rem;
+  overflow: hidden !important;
+  border-radius: 25px;
+  box-shadow: 0px 3px 6px #2f2f2f;
+}
+
+.Cusine a {
+  font-family: 'Roboto', sans-serif;
+}
+
+.primaryBg{
+background-color: #FF6C00 !important;
+
+  
+}
+.addressBarBorder{
+  border :none !important;
+  /* border-bottom: 1px solid #1c1c1c !important; */
+  border-radius: 0px !important;
+  /* border-bottom: ;
+  border-color: #FF6C00 !important; */
+}
+
+.accordion-button:not(.collapsed){
+  color: #ffffff !important;
+  background-color: #ff6c00 !important;
+  box-shadow: inset 0 calc(var(--bs-accordion-border-width) * -1) 0 var(--bs-accordion-border-color);
+}
+
+button:focus {
+  outline: none;
+  background-color:#df4300 !important;
+}
+
+
+.abutton:focus{
+  background-color: #FF6C00 !important;
+}
+
+.SeeSpan {
+  background-color: #FF6C00 !important;
+  border-radius: 0px !important;
+  border: none !important;
+  
+}
+
+.SeeSpan2 {
+  background-color: #ffffff !important;
+  border-radius: 0px 25px 25px 25px!important;
+ 
+  
+}
+
+.outerCard {
+  border-radius:20px !important;
+  padding: 2rem 2rem 0rem 2rem !important;
+  box-shadow: 0px 6px 6px #2f2f2f75;
+}
+
+.innerCard {
+  border-radius: 25px 25px 25px 0px!important;
+  overflow: hidden !important;
+}
+
+.mainCardDetails {
+  font-size: 1rem !important;
+}
+
+.mainCusineDetails {
+  font-size: .7rem !important;
+}
+
+.ratingText {
+  font-size: .5rem !important;
+}
+
+.wid{
+  width:15% !important;
+}
+
+.RestaurantCardDetails {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  color: #FF6C00 !important;
+  font-size: .7rem !important;
+}
+
+.RestaurantDetails {
+  margin-top: 0px !important;
+  margin-bottom: 1rem !important;
+  color: #2f2f2f !important;
+  font-size: .7rem !important;
+}
+
+.SeeSpan3 {
+  background-color: #FF6C00 !important;
+  border-radius: 25px 0px 0px 0px !important;
+  border: none !important;
+  
+}
+
+.prizePRop {
+  color: #2f2f2f !important;
+  font-weight: bold;
+  font-size: 1.5rem !important;
+}
+
+.orderPanel {
+  height: 10rem !important;
+  width: 35rem !important;
+  box-shadow: 0px 2px 6px #2f2f2f75;
+  border-radius: 20px;
+}
+.addressCardOuter {
+ 
+  box-shadow: 0px 2px 5px #2f2f2f75;
+  border-radius: 20px;
+}
+.count {
+  width: 3rem !important;
+}
+.lineTotal {
+  height: .1rem !important;
+  background-color: #525252;
+}
+.lineTotal2 {
+  height: .1rem !important;
+  width: 13rem !important;
+  background-color: #525252;
+}
+.roundedImage {
+  border-radius: 20px;
+}
+
+
+
+
+
+/* AvatarProf */
+
+
+  
+
+
+@keyframes Expand {
+  
+ 
+    from {
+      transform : translateX(100%);
+    }
+  
+    to {
+      transform: translateX(0%);
+    }
+
+}
+
+@keyframes Slide {
+  
+ 
+  from {
+    transform : scale(0%);
+  }
+
+  to {
+    transform: scale(100%);
+  }
+
+}

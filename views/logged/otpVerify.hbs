@@ -1,0 +1,57 @@
+{{#if password}}
+<DIV class="container">
+<section class="row">
+  <div class="col-lg-6 p-5 mt-5   overflow-hidden">
+    <img src="/images/undraw_secure_login_pdn4.svg" style="width:30rem; height:auto ; margin-top:7rem !important;" alt="" class="img-fluid mt-5 pt-5 ps-5">
+  </div>
+  <div class="col-lg-6">
+
+  <div class="mt-2 col-12 p-5 mt-5">
+    <div class="text-start ps-5 mt-5 pt-5">
+      <h1 class="text-secondary"><span class="primaryText">Verify</span> it is you</h1>
+    </div>
+    <div class="text-start ps-5 mt-5 pt-5">
+<h1 class="text-secondary text-start">Hello <span class="primaryText">{{userdetails.userExist.FirstName}}</span>  <span class=""><h6><a href="/" class="nav-link text-dark">or it is not you?</a></h6></span></h1>
+    </div>
+ <div class="p-5 pt-1">
+  <form action="/verifyPassOtp/{{userdetails.userExist.Phone}}" method="post">
+     <label for="inputAddress" class="form-label">One Time Password</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="Email" name="otp">
+    <div class="text-center pt-3">
+      <button type="submit" class="btn btn-primary SeeSpan ">Veirfy</button>
+    </div>
+    </form>
+ </div>
+  </div>
+  </div>
+ 
+</section>
+</DIV>
+
+
+  
+{{else}}
+<section class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class=" ">
+  <h2 class="mx-auto text-dark fw-bold mb-5"> <span class="primaryText">OTP</span>Verification<span class=" fw-normal">&nbsp;  Is it you</span></h2>
+<form action="/verify" method="post" >
+        <div class="row mt-4">
+
+
+  <div class="mt-2 col-12">
+    <label for="inputAddress" class="form-label">One Time Password</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="Email" name="otp">
+  </div>
+
+
+      </div>
+     <div class="modal-footer">
+        <div class="mx-auto mt-2">
+            <div class="d-flex justify-content-center">
+    <button type="submit" class="btn btn-primary SeeSpan">Veirfy</button>
+    </div>
+    </form>
+
+    </div>
+    </section>
+    {{/if}}

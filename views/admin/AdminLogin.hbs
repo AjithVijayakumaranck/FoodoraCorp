@@ -1,0 +1,43 @@
+
+<section class="d-flex align-items-center justify-content-center " style="height: 100vh;">
+<div class="w-50 h-100 d-flex align-items-center justify-content-center" style="">
+    <img src="/images/Assets/lOGO +  TEXT oR.png" width="400px" height="400px" alt="" class="w-auto" alt="">
+      </div>
+    
+    <div class=" ">
+  <h2 class="mx-auto text-dark fw-bold mb-5"> <span class="primaryText">Log</span>in<span class="fs-5 fw-normal">&nbsp;Admin</span></h2>
+<form action="/admin/Adminlogin" method="post" >
+        <div class="row mt-4">
+
+     
+
+ 
+  <div class="mt-2 col-12">
+    <label for="inputAddress" class="form-label">Email</label>
+    <input type="Email" class="form-control" id="email" placeholder="Email" name="Email" onkeyup="validaeteEmail()" required>
+    <span id="emailError"></span>
+  </div>
+
+  
+ 
+  <div class="col-md-12 mt-4">
+    <label for="inputState" class="form-label"> Password</label>
+   <input type="password" class="form-control" id="userpassword"  placeholder="Password" name="Password" onkeyup="validatePasswored()" required>
+   <span id="passsword-error"></span>
+      {{#if loginError}}
+    <h6 class="text-danger mt-2 text-center">Password Or Mail id is wrong</h6>
+    {{/if}}
+  </div>
+ 
+ 
+
+      </div>  
+     <div class="modal-footer">
+        <div class="mx-auto mt-2">
+            <div class="d-flex justify-content-center">
+    <button type="submit" class="btn btn-primary SeeSpan mt-2" >Login</button>
+    </div>
+    </form>
+        
+    </div>
+    </section>

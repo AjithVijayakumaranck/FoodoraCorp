@@ -1,0 +1,158 @@
+<section class="container d-flex align-items-center justify-content-center">
+  <div class=" ">
+    <h2 class="mx-auto text-dark fw-bold mb-2 mt-5"> <span class="primaryText">Add Cusines
+    </h2>
+    <form action="/RestaurantAdmin/addCusines" method="post" enctype="multipart/form-data">
+
+
+      <div class="row ">
+        <div class="c">
+          <DIV class="mr-auto">
+
+            <div class="wrapper pt-1">
+              <div class="box">
+                <div class="js--image-preview"></div>
+                <div class="upload-options" style="border-radius: 100% !important; background-color :#ff0029 !important">
+
+                  <label>
+                    <input type="file" name="cusineImage" class="image-upload" accept="image/*" />
+                  </label>
+                </div>
+              </div>
+          </DIV>
+
+
+
+          <div class="w-100 mt-5 cusineNameAndDetails" style="z-index:0 !important;">
+            <div class="col-12 col-lg-12 ">
+              <label for="inputEmail4" class="form-label form-group">Cusine Name <span
+                  class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="CusineName" placeholder="Cusine Name" name="cusineName"
+                onkeyup="validateCusineName()">
+              <span id="cusineNameError"></span>
+            </div>
+
+
+
+            <div class="mt-2 col-12 mt-4 ">
+              <label for="inputAddress" class="form-label">Details <span class="text-danger">*</span></label>
+              <textarea class="form-control" id="cusineDetails" placeholder="Details" name="cusineDetails"
+                onkeyup="validateCusineDetails()" rows="5"></textarea>
+              <span id="detailCusineError"></span>
+            </div>
+          </Div>
+
+        </div>
+
+
+
+        <div class="col-12 mt-4">
+          <label for="inputAddress" class="form-label">Veg / Non-veg <span class="text-danger">*</span></label>
+          <div class="d-flex align-item-center">
+            <input type="radio" value="Veg" class="form-control w-auto mx-3" id="veg/nonveg" placeholder="Ph.no"
+              name="Veg" onkeyup="validateRadio()"> <span>
+              <h1 class="h6"> Veg</h1>
+            </span>
+            <input value="NonVeg" type="radio" class="form-control  w-auto mx-3" id="veg/nonveg" placeholder="Ph.no"
+              name="Veg" onkeyup="validateRadio()"><span>
+              <h6 class="h6">Non-veg </h6>
+            </span>
+          </div>
+          <span id="phone-error"></span>
+        </div>
+
+        <div class="col-12 mt-4">
+          <label for="inputAddress2" class="form-label">Catogory<span class="text-danger">*</span></label>
+          <div class="d-flex align-item-center">
+            <input type="radio" value="SouthIndian" class="form-control w-auto mx-3" id="cusineRegion"
+              placeholder="Ph.no" name="Region" onkeyup="validateRadio()"> <span>
+              <h1 class="h6">South Indian</h1>
+            </span>
+            <input type="radio" value="NorthIndian" class="form-control w-auto mx-3" id="cusineRegion"
+              placeholder="Ph.no" name="Region" onkeyup="validateRadio()"> <span>
+              <h1 class="h6">North Indian</h1>
+            </span>
+            <input type="radio" value="Japanease" class="form-control w-auto mx-3" id="cusineRegion" placeholder="Ph.no"
+              name="Region" onkeyup="validateRadio()"> <span>
+              <h1 class="h6">Japanease</h1>
+            </span>
+            <input type="radio" value="French" class="form-control w-auto mx-3" id="cusineRegion" placeholder="Ph.no"
+              name="Region" onkeyup="validateRadio()"> <span>
+              <h1 class="h6">French</h1>
+            </span>
+            <input type="radio" value="Italian" class="form-control w-auto mx-3" id="cusineRegion" placeholder="Ph.no"
+              name="Region" onkeyup="validateRadio()"> <span>
+              <h1 class="h6">Italian</h1>
+            </span>
+            <input type="radio" value="Korean" class="form-control w-auto mx-3" id="cusineRegion" placeholder="Ph.no"
+              name="Region" onkeyup="validateRadio()"> <span>
+              <h1 class="h6">Korean</h1>
+            </span>
+            <input type="radio" value="Chinease" class="form-control w-auto mx-3" id="cusineRegion" placeholder="Ph.no"
+              name="Region" onkeyup="validateRadio()"> <span>
+              <h1 class="h6">Chinease</h1>
+            </span>
+
+          </div>
+
+
+          <div class="col-12 mt-4">
+            <label for="inputAddress3" class="form-label">Sub-Catogory<span class="text-danger">*</span></label>
+            <div class="d-flex align-item-center">
+              <input type="CheckBox" class="form-control w-auto mr-3" id="cusinSubCat" placeholder="Ph.no" name="SubCat"
+                onkeyup="validateCheckBox()" value="mainCourse" <span>
+              <h1 class="h6">Main Course</h1></span>
+              <input type="CheckBox" class="form-control w-auto mx-3" id="cusinSubCat" placeholder="Ph.no" name="SubCat"
+                onkeyup="validateCheckBox()" value="appetizer"> <span>
+                <h1 class="h6">Appetizer</h1>
+              </span>
+              <input type="CheckBox" class="form-control w-auto mx-3" id="cusinSubCat" placeholder="Ph.no" name="SubCat"
+                onkeyup="validateCheckBox()" value="desert"> <span>
+                <h1 class="h6">Desert</h1>
+              </span>
+
+
+            </div>
+
+
+
+
+
+          </div>
+
+          <div class="col-12 col-lg-12 mx-0 mt-4 px-0 w-25">
+            <label for="inputEmail4" class="form-label form-group">Price<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="signupname" placeholder="Price" name="Price"
+              onkeyup="validatPrice()">
+            <span id="priceError"></span>
+          </div>
+
+          <div class="col-md-12 mt-4 mx-0 px-0">
+            <label for="inputState" class="form-label">Way Of Cooking</label>
+            <textarea name="" class="form-control" id="userpassword" placeholder="How is it cooked?" name="Password"
+              cols="100" rows="10"></textarea>
+
+            <span id="passsword-error"></span>
+          </div>
+          <div class="modal-footer">
+            <div class="mx-auto mt-2">
+              <div class="d-flex justify-content-center">
+                <button type="submit" onclick="return validateCusineForm(event)" class="btn btn-primary SeeSpan">Add
+                  Cusines</button>
+                  <div>
+                  </div>
+              </div>
+                  <h6 id="cussineErrors" class="text-center"></h6>
+            </div>
+    </form>
+
+  </div>
+</section>
+
+
+<script defer src="https://cdn.crop.guide/loader/l.js?c=ZLJHXY"></script>
+<script>
+  function viewImage(event) {
+    document.getElementById('imagePreview').src = URL.createObjectURL(event.target.files[0])
+  }
+</script>

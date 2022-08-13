@@ -1,0 +1,66 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mt-5 pt-5">
+         <h1 class="mb-5"> Select your <span class="primaryText ">Address</span></h1>
+            {{#each address}}
+        
+         
+           
+            <form  {{#if ../profileAddress}} action="/chageDefault/{{@index}}" {{else}} action="/chageDefaultProfile/{{@index}}"  {{/if}}method="post">
+            
+          <div class="accordion col-lg-12 col-sm-12 col-md-12  mt-2" id="accordionExample">
+           
+                        <div class="accordion-item ">
+                            <h2 class="accordion-header  primaryBg rounded" id="headingOne">
+                                <button class="accordion-button abutton" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse{{@index}}" aria-expanded="true" aria-controls="collapseOne">
+                                    Address  {{@index}}
+                                </button>
+                            </h2>
+                            <div id="collapse{{@index}}" class="accordion-collapse collapse " aria-labelledby="headingOne"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body row">
+                                    
+                                    <input type="text" class="  text-md-center text-lg-start addressBarBorder" id="" name="customer" value="{{address.name}}">
+                                    <input type="text" class=" text-md-center text-lg-start   addressBarBorder" id="" name="houseName" value="{{address.appartment}}">
+                                    <input type="text" class=" text-md-center text-lg-start   addressBarBorder" id=""  name="place" value="{{address.place}}">
+                                    <input type="text" class="  text-md-center text-lg-start  addressBarBorder" id="" name="district" value="{{address.district}}">
+                                    <input type="text" class="text-lg-start text-md-center    addressBarBorder" id="" name="mobile" value="{{address.mobile}}">
+                                    <input type="text" class="text-lg-start text-md-center    addressBarBorder" id="" name="Pin-zip" value="{{address.pin}}">
+                                    <input type="text" class="text-lg-start text-md-center    addressBarBorder" id="" name="addressId" value="{{address.addressId}}" hidden>
+                                    
+                                    <div class="text-end">
+                                        {{#if address.def}}
+                                       
+                                        <input type="button" class="btn  bg-dark SeeSpan   text-white e mt-2 " value="Default" >
+                                      
+                                       
+                                        {{else}}
+
+                                        <input type="submit" class="btn SeeSpan text-white mt-2 " value="Set Default">
+                                        <a {{#if ../profileAddress}} href="/deleteAddressProfile/{{address.addressId}}" {{else}} href="/deleteAddress/{{address.addressId}}"  {{/if}} class="btn SeeSpan text-white mt-2 bg-dark"><i class="fa-solid fa-xmark"></i></a>                                        {{/if}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                    
+                    {{/each}}
+                   <h6 class="mt-3">Want to add a new address?  {{#if profileAddress}} <a href="/addAddressProfile" class=" fw-bold primaryText text-decoration-none" >Add Address</a>{{else}} <a href="/addAddress" class=" fw-bold primaryText text-decoration-none"> Add Address</a>{{/if}}</h6>
+                    </div>
+            
+            <div class="col-lg-6 pt-5 p-0 ps-5">
+                <div class="row">
+
+                <img src="/images/undraw_link_shortener_mvf6.svg" alt="" class="img-fluid p-0 pt-5 img-responsive mt-5 ms-5 ps-5 w-75">
+                </div>
+                
+            </div>
+            <div class="col-lg-12 pt-5 p-0 text-center mt-5">
+                <h6 class="fw-medium">@foodoraCorp your address is secured with us.</h6>
+            </div>
+        </div>
+    </div>
+</section>

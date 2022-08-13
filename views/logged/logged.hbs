@@ -1,0 +1,192 @@
+
+
+<section class="   py-2 border-bottom-0 bg-dark" >
+<marquee behavior="" direction=""> <h6 class="text-white marquee m-0 p-0" style="letter-spacing: .25rem;"  ><span class="primaryText"><i class="fa-solid fa-angles-left"></i></span>  We don't deliver food,<span class="primaryText">We Deliver Experience </span><span class="text-white"><i class="fa-solid fa-angles-right"></i></span></h6></marquee>
+</section>
+
+
+<section>
+<div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    {{!-- {{#each Carousal}}
+    <div class="carousel-item active carousal-fade" >
+      <img class="d-block w-100"  src="/images/bannerImages/{{this}}" alt="First slide">
+    </div>
+    {{/each}} --}}
+    <div class="carousel-item active carousal-fade" >
+      <img class="d-block w-100"  src="/images/bannerImages/{{Carousal.[0]}}" alt="First slide">
+    </div>
+    <div class="carousel-item carousal-fade" >
+      <img class="d-block w-100" src="/images/bannerImages/{{Carousal.[1]}}" alt="Second slide">
+    </div>
+    <div class="carousel-item carousal-fade">
+      <img class="d-block w-100" src="/images/bannerImages/{{Carousal.[2]}}" alt="Third slide">
+    </div>
+  </div>
+
+  
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</section>
+<section class="   py-2 pb-4 border-bottom-0 bg-dark" >
+    {{!-- <form action="" class="d-flex justify-content-center">
+        <input type="search" placeholder="Search Your Delight" name="search" class="form-box col-lg-4 col-6  px-5">
+    </form> --}}
+</section>
+<div class="container-fluid container-lg  mt-5 py-2">
+    <div class="owl-carousel owl-theme">
+      {{#each restaurantNames}}
+ <div class="item mx-3" ><a href="/selectRestaurant/{{this._id}}"> <img style="border-radius:20px !important ;" src="/images/restaurantImages/{{this.image}}" alt="" class="img-fluid"></a>
+    <h6 class="text-center">{{this.RestaurantName}}</h6></div>
+    {{/each}}
+   
+  
+   
+    
+</div>
+</div>
+  
+</section>
+
+<section>
+    <div class="mt-3 container">
+      
+        <div>
+
+          {{#if selectedRestaurant}}
+          
+            <p class="text-black fs-2 mb-1 sw-bold text-center text-lg-start"> <span class="fw-bold fs-1 text-secondary">{{response.[0].Restaurant.admin.RestaurantName}}</span>
+              </p>
+              
+          {{else}}
+            <p class="text-black fs-2 mb-1 sw-bold text-center text-lg-start"> <span class="fw-bold fs-1 ">{{restaurantCount}}</span>
+                Resaturants</p>
+          {{/if}}
+        </div>
+        <div class="bg-dark mt-1" style="height: 3px !important; background-color: #2f2f2f !important;">
+        </div>
+    
+    </div>
+</section>
+
+
+<section>
+   
+    <div class="container   mt-5 mb-5">
+        {{!-- card --}}
+        <div class="row g-1 justify-content-center" >
+         {{#each response}}
+
+            {{!-- cardsection --}}
+
+                 <div class=" col-4 col-lg-3   px-3 py-1 " >
+              <div class=" p-2 pe-0 outerCard" style="overflow: hidden !important; ">
+                {{!-- cardIMage --}}
+             
+                <div class="innerCard me-2">
+                    <img src="/images/cusineImages/{{this.image}}" alt="" class="img-fluid">
+                </div>
+
+                {{!-- cardCuisine --}}
+
+                <p class="fw-bold mt-1  ms-1 m-0 mainCardDetails">{{this.cusineName}}</p>
+                <h4 class=" m-0 ms-1 mainCusineDetails">{{this.cusineDetails}}</h4>
+
+                {{!-- cardRating --}}
+
+ 
+
+                {{!-- cardOrder and REstaurant --}}
+
+                <div class="d-flex justify-content-between " style="align-items:baseline;">
+                    <div>
+                        <h6 class="ms-1 fw-bold RestaurantCardDetails">{{Restaurant.admin.RestaurantName}}</h6>
+                        <h6 class="ms-1 fw-bold RestaurantDetails">{{Restaurant.admin.Location}}</h6>
+                    </div>
+                    <div>
+                      <button  onclick="addToCart('{{this._id}}')" class="btn SeeSpan3 ps-4 text-center text-white" >Order</button>
+                        {{!-- <a href="/addToCart/{{this._id}}" class="btn btn-primary SeeSpan3 ps-4 text-center">Order</a> --}}
+                    </div>
+                </div>
+
+
+                {{!-- CusineAmount --}}
+                
+<div>                <h1 class="prizePRop  text-start ms-1">₹{{this.Price}}</h1>
+</div>
+
+</div>
+            </div>
+            {{/each}}
+            <div class=" py-5">
+
+            </div>
+
+                 
+
+                
+        {{!-- card-end --}}
+</section>
+
+<footer style="background-color:#ff6c00;  position:relative;" class="fixed-bottom fixed-lg-none"  >
+<div class="row mb-0  align-items-center">
+  <div class="col-lg-12 text-center py-3 py-lg-1">
+  <h6 class="text-white p-0 m-0">Foodora Corp.in</h6>
+  </div>
+
+</div>
+</footer>
+
+
+
+
+
+
+
+{{!-- modal --}}
+
+
+
+
+<!-- Modal -->
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+$('.owl-carousel').owlCarousel({
+    loop:false,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+     
+    } 
+})
+</script>
+ 
+
+
+
+

@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg  navbar-dark bg-dark  " style="background-color: #000000 !important;" id="homeTop">
+    <div class="container-fluid container-lg">
+        <a class="navbar-brand  " href="/home">
+
+            <img src="/images/Assets/TEXT OR.png" alt="" width="300px"
+                class="align-text-top mx-auto mx-lg- mt-0 text-center img-brand">
+        </a>
+        <div>
+            <button class="navbar-toggler outline-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span aria-expanded="false"><img src="/images/menuham.svg" alt=""></span>
+            </button>
+             
+                <div class="navbar-nav d-none d-lg-flex justify-content-end">
+            
+                                   <a class="nav-link  nav-text text-white position-relative me-3" href="/orders"> <span class="me-1"><img src="/images/Vector2.svg"
+                                alt="" class="icon1 "></span><span class="m-0 p-0">Cart</span><span class="  badge badge-secondary p-0 m-0  mt-3 text-white badge " style=" position:absolute; width: 1rem !important;    right: -8px !important;
+    top: -18px;"><h6 class="m-0 p-0 primaryText" id="CountCart">{{this.cartCount}}</h6></span></a>
+    <div class="dropdown">
+  <button class="btn bg-none primaryText dropdown-toggle rounded hoverStyle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style=".hoverStyle:border:none !important">
+
+<i class="fa-solid fa-user "></i>
+  </button>
+  <ul class="dropdown-menu p-0 m-0 border-none">
+    <li> <a class="nav-link text-dark " href="/userProfile" tabindex="-1" aria-disabled="true"> <span
+                            class="me-4"><i class="fa-solid fa-user primaryText"></i></span>Profile</a></li>
+  
+    <li>
+                    <a class="nav-link text-dark " href="/logOut" tabindex="-1" aria-disabled="true"> <span
+                            class="me-4"><img src="/images/bx_log-out.svg" alt="" class="icon1"></span>Logout</a></li>
+  </ul>
+</div>
+                </div>
+           
+            {{!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button> --}}
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                    <h5 id="offcanvasRightLabel">Menu</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body d-block d-lg-none">
+                    <div class="navbar-nav text-black">
+                        {{!-- <a class="nav-link text-dark mt-4 mt-lg-0 " href="/orders">Order</a> --}}
+                        <a class="nav-link text-dark " href="/userProfile"  data-bs-toggle="modal" data-bs-target="#exampleModal">Profile</a>
+                        <a class="nav-link text-dark " href="/logOut" tabindex="-1" aria-disabled="true">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+

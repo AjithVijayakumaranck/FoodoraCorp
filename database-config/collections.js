@@ -1,0 +1,17 @@
+module.exports={
+USER_COLLECTION:'user',
+ADMIN_COLLECTION:'admin',
+PRODUCT_COLLECTION:'product',
+RESTAURANT_COLLECTION:'restaurant',
+COUPON_COLLECTION:'Coupons',
+CUSINE_COLLECTION:'cusine',
+SUPER_NOTIFICATIONS:'notification',
+CART_COLLECTION:'cart',
+ORDER_COLLECTION:'order',
+BANNER_COLLECTION:'banner',
+ADDRESS_COLLECTION:'address',
+WALLET_COLLECTION:'wallet',
+ServiceId:'VAd2a661db02cde1aaa1aabec2a08c534c',
+accoundSID:'ACd8c308bc2d54ce6628a466fc86c52838',
+authToken:'7b8b548f9ecd347e7e72fcf7b4f801b3'
+}

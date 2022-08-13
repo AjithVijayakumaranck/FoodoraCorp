@@ -1,0 +1,66 @@
+
+<section class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class=" ">
+  <h2 class="mx-auto text-dark fw-bold mb-5"> <span class="primaryText">Sign</span>Up <span class="fs-5 fw-normal">&nbsp; be a Customer</span></h2>
+<form action="/signup" method="post" id="phVerify" X>
+        <div class="row mt-4">
+
+       <div class="col-12 col-lg-6">
+    <label for="inputEmail4" class="form-label form-group">First Name</label>
+    <input type="text" class="form-control" id="signupname"  placeholder="First Name" name="FirstName" onkeyup="validateName()">
+    <span id="signupnameerr"></span>
+  </div>
+  <div class="col-lg-6 col-12 ">
+    <label for="inputPassword4" class="form-label">Last Name</label>
+    <input type="text" class="form-control" id="inputPassword4" placeholder="Last Name" id="inputPassword" name="LastName">
+    
+  </div>
+  <div class="mt-2 col-12">
+    <label for="inputAddress" class="form-label">Email</label>
+    <input type="Email" class="form-control" id="email" placeholder="Email" name="Email" onkeyup="validateEmail()"> 
+    <span id="emailError"></span>
+  </div>
+  {{!-- <form action="/signup" method="post" id="NumberVerify">
+  <div class="col-12 mt-4">
+    <label for="inputAddress2" class="form-label">Phone</label>
+    <input type="number" class="form-control" id="inputAddress2" placeholder="Ph.no" name="Phone">
+    <input type="submit" class="SeeSpan btn text-white mt-3"  value="verify"></input> <span class="ms-2" id="Verify"></span>
+  </div>
+  </form> --}}
+    
+  <div class="col-12 mt-4">
+    <label for="usermobile" class="form-label">Phone</label>
+    <input type="number" class="form-control" id="usermobile" placeholder="Ph.no" name="Phone" onkeyup="validatePhone()">
+    <span id="phone-error"></span>
+  </div>
+  
+ 
+  <div class="col-md-12 mt-4">
+    <label for="passsword" class="form-label"> Password</label>
+   <input type="password" class="form-control" id="userpassword"  placeholder="Password" name="Password" onkeydown="validatePassword()">
+    <span id="passsword-error"></span>
+  </div>
+ 
+
+      </div>
+     <div class="modal-footer">
+        <div class="mx-auto mt-2">
+            <div class="d-flex justify-content-center">
+    <button type="submit" onclick="return validateSignUpForm(event)" class="btn btn-primary SeeSpan">Sign Up</button>
+    </div>
+    {{#if emailExist}}
+    <h6 class="text-danger mt-3">Email already used</h6>
+    {{/if}}
+    {{#if phoneExist}}
+    <h6 class="text-danger mt-3">Phone number already registered</h6>
+    {{/if}}
+    </form>
+        {{!-- <div class="d-flex justify-content-center">
+    <h6 class="my-3">or</h6>
+
+    </div>
+    <div class="d-flex justify-content-center">
+     <img src="/images/Assets/google button.svg" alt="" class="loginBtn">
+    </div> --}}
+    </div>
+    </section>

@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg  navbar-dark bg-dark  " style="background-color: #000000 !important;" id="homeTop">
+    <div class="container-fluid container-lg">
+        <a class="navbar-brand  " href="/home">
+
+            <img src="/images/Assets/TEXT OR.png" alt="" width="300px"
+                class="align-text-top mx-auto mx-lg- mt-0 text-center img-brand">
+        </a>
+        <div>
+            <button class="navbar-toggler outline-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span aria-expanded="false"><img src="/images/menuham.svg" alt=""></span>
+            </button>
+             
+                <div class="navbar-nav d-none d-lg-flex justify-content-end">
+                 
+                    <a class="nav-link  nav-text primaryText position-relative me-3" href="#"> <span class="me-1"><img src="/images/Vector2.svg"
+                                alt="" class="icon1 textColor"></span>{{#if checkout}}<span class="m-0 p-0">CheckOut</span>{{else}}<span class="m-0 p-0">Cart</span>{{/if}}</a>
+              
+                </div>
+         
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                    <h5 id="offcanvasRightLabel">Menu</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body d-block d-lg-none">
+                    <div class="navbar-nav text-black">
+                       
+                        {{!-- <a class="nav-link text-dark " href="#" tabindex="-1" aria-disabled="true">Coupons</a> --}}
+                          <a class="nav-link text-dark " href="#"> <span class="me-1">
+                              </span>{{#if checkout}}<span class="m-0 p-0">CheckOut</span>{{else}}<span class="m-0 p-0">Cart</span>{{/if}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+

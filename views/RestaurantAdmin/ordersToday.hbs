@@ -1,0 +1,97 @@
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <h4 class="mt-0 header-title">Orders Today</h4>
+                 
+                                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                    <thead style="background-color: #ff0029 !important; " class="text-white fw-bold">
+                                    <tr>
+                                        <th>Sl no</th>
+                                        <th>Dish</th>
+                                        <th>Quantity</th>
+                                        <th>Customer Address</th>
+                                        <th>Pincode</th>
+                                        <th>Contact</th>
+                                        <th>Pay Method</th>
+                                        <th>Payment Status</th>
+                                        <th>Order Status</th>
+                                    </tr>
+                                    </thead>
+
+
+                                    <tbody>
+                                        {{#each allorders}}
+                                    <tr>
+                                        <td>{{inc @index}}</td>
+                                        <td>{{this.Products.[0].cusineName}}</td>
+                                        <td>{{this.quantity}}</td>
+                                        <td>{{this.orderDetails.[0].address.customer}} ,{{this.orderDetails.[0].address.place}}</td>
+                                        <td>{{this.orderDetails.[0].address.pincode}}</td>
+                                        <td>{{this.orderDetails.[0].contact}}</td>
+                                        <td>{{this.orderDetails.[0].paymentMethod}}</td>
+                                        <td>{{this.orderDetails.[0].status}}</td>
+                                        {{#if this.orderDetails.[0].cancelStatus}}
+                                        <td><div class="btn-group">
+  <button class="btn btn-secondary btn-sm dropdown-toggle disabled" type="button" data-bs-toggle="dropdown" aria-expanded="false" value=""style="background-color: #ff0029 !important; border:none !important;">
+   {{this.orderDetails.[0].orderStatus}}
+  </button>
+  <ul class="dropdown-menu" >
+   {{!-- <li><button class="dropdown-item" >Being Prepared</button></li> --}}
+    <li><button class="dropdown-item" >Out for Delivery</button></li>
+    <li><button class="dropdown-item" >Delivered</button></li>
+  </ul>
+</div></td>
+{{else}}
+{{#ifEquels 'Deliverd' this.orderDetails.[0].orderStatus}}
+  <td><div class="btn-group"></div>
+  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" value=""style="background-color: #ff0029 !important; border:none !important;">
+   {{this.orderDetails.[0].orderStatus}}
+  </button>
+  <ul class="dropdown-menu">
+     {{!-- <li><button class="dropdown-item" onclick="changeStatus('Deliverd','{{this.orderId}}')">Delivered</button></li> --}}
+  </ul>{{else}}
+
+
+  {{#ifEquels 'Out For Delivery' this.orderDetails.[0].orderStatus}}
+     <td><div class="btn-group"></div>
+  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" value=""style="background-color: #ff0029 !important; border:none !important;">
+   {{this.orderDetails.[0].orderStatus}}
+  </button>
+  <ul class="dropdown-menu">
+  {{!-- <li><button class="dropdown-item " onclick="changeStatus('Out For Delivery','{{this.orderId}}')" id="ChangeOrderStatus">Out for Delivery</button></li> --}}
+     <li><button class="dropdown-item" onclick="changeStatus('Deliverd','{{this.orderId}}')">Delivered</button></li>
+  </ul>
+  
+</div></td>
+{{else}}
+
+     <td><div class="btn-group"></div>
+  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" value=""style="background-color: #ff0029 !important; border:none !important;">
+   {{this.orderDetails.[0].orderStatus}}
+  </button>
+  <ul class="dropdown-menu">
+  <li><button class="dropdown-item " onclick="changeStatus('Out For Delivery','{{this.orderId}}')" id="ChangeOrderStatus">Out for Delivery</button></li>
+     <li><button class="dropdown-item" onclick="changeStatus('Deliverd','{{this.orderId}}')">Delivered</button></li>
+  </ul>
+  
+</div></td>
+{{/ifEquels}}
+  {{/ifEquels}}
+{{/if}}
+                                        
+                                 
+                                    </tr>
+                                    {{/each}}
+                              
+                                    
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div> <!-- end col -->
+                </div> <!-- end row -->

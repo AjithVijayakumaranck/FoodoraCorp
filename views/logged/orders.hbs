@@ -1,0 +1,148 @@
+<section class="container">
+        {{#if Cusines}}
+    <div class="text-center text-dark fs-1 mt-5 d-flex justify-content-between px-4">
+        <h2>Your Orders</h2>
+        <h2>Your Address</h2>
+    </div>
+
+    <div class="row">
+        <div class="col-6 col-md-12 col-lg-6">
+
+            {{#each Cusines}}
+            
+            <div class=" p-3 orderPanel d-flex align-items-center mb-4 w-100 ">
+                
+                <div style="" class="">
+                    <img style="width:8rem !important; height:8rem !important" src="/images/cusineImages/{{this.Products.image}}" class="roundedImage" alt="Image">
+                </div>
+                <div class="ps-5 pt-1 ms-1" style="width:35% !important;" >
+                   
+                    <div>
+                        <h5 class="p-0 m-0">{{this.Products.cusineName}}</h5>
+                        <h6 class="p-0 m-0">{{this.Products.cusineDetails}}</h6>
+                    </div>
+                    <div class="mt-3">
+                        <h6 class="p-0 m-0 textColor fw-bold">Restaurant</h6>
+                        <h6 class="p-0 m-0">{{Products.Restaurant.admin.RestaurantName}}</h6>
+                    </div>
+                    <div class="mt-2">
+                        <h5 class="p-0 m-0  text-dark fw-bold">₹<span class="textColor">{{this.Products.Price}}</span></h5>
+
+                    </div>
+                    
+                </div>
+                
+
+                <div class="ps-5 d-flex w-25">
+                    <div class="ps-5 d-flex align-items-center">
+                        <div class="">
+                            <button class="btn SeeSpan text-white text-decoration-none " onclick="changeQuantity('{{this._id}}','{{this.Products._id}}','{{../userData}}',-1)">-</button>
+                        </div >
+                        <div class="d-flex align-items-center">
+                        <div class="text-center  count">
+                            
+                            <h4 class="pt-1 m-0 px" id="{{this.Products._id}}">{{this.quantity}}</h4>
+                        </div>
+                        <div>
+                    </div>
+                           <button class="btn SeeSpan text-white text-decoration-none " onclick="changeQuantity('{{this._id}}','{{this.Products._id}}','{{../userData}}',1)">+</button>
+                        </div>
+                        <div class="ps-3">
+                            {{!-- href="/deleteCusineCart/{{this.Products._id}}" --}}
+                            <a class="nav-link btn-none  p-0 ps-3" onclick="deleteCartCusine(event,'{{this.Products._id}}')"  id="deleteCusineConfirms"  style="background-color :none !important; box-shadow:none !important; outline: none !important;"><i class=" m-0 p-0 fa-solid fa-xmark"></i></a>
+                
+            </div>
+                </div>
+            </div>      
+            
+        </div>
+        
+        {{/each}}
+
+        <div>
+                <div class="w-100">
+                    <div class=" lineTotal mt-5">
+
+                    </div>
+                    <div class="mt-3 ">
+                        <h1 class="pt-0 m-0 text-end  textColor">Grand Total</h1>
+                        {{!-- <div class="d-flex justify-content-end my-2">
+                            <div class=" lineTotal2 ">
+                            </div>
+                        </div> --}}
+                        <h2 class="pt-0 m-0 text-end textColor">₹<span class="textColor fw-bold" id="Grandtotal">{{grossCharge}}</span></h2>
+                        <h6 class="pt-0  m-0 mt-2 text-end fw-medium">food cost ₹<span class="fw-bold" id="subtotal">{{totalValue}}</span></h6>
+                        <h6 class="pt-0 m-0  mb-3 text-end ">Delivery charge ₹<span class="fw-bold" id="deliverytotal">{{totalDeliveryCharge}}</span></h6>
+
+
+                    </div>
+                    <div class="d-flex justify-content-end my-2">
+                        <div class=" lineTotal2 ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="ps-lg-3 mt-lg-0 mt-5 justify-content-end col-12 col-lg-6">
+        
+            <div class="addressCardOuter row ps-4 offset-1 py-3">
+                <div class="col-3 p-3 row justify-content-center align-items-center">
+                    <i class="fa-solid fa-address-book h1 textColor2" id="addressBook"></i>
+                </div>
+                <div class="w-75 p-3 d-flex text-end flex-column justify-content-center ">
+                   
+                    <h5>{{address.name}}</h5>
+                    <div>
+                        <h6 class="m-0 mt-2 fw-bold" id="AddressCard">{{address.appartment}}</h6>
+                        <h6 class=" m-0 fw-bold" id="AddressCard">{{address.place}}</h6>
+                        <h6 class="m-0  fw-bold" id="AddressCard">{{address.district}}</h6>
+                        <h6 class=" m-0  mb-2 fw-bold" id="AddressCard">PIN : {{address.pin}}</h6>
+                    </div>
+                    <div class="pt-2">
+                        <h6 class=" m-0 p-0 primaryText fw-bold">Contact</h6>
+                    </div>
+                    <div>
+                        <h6 class=" m-0 mt-1 fw-bold" id="AddressCard">{{address.mobile}}</h6>
+
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between mt-2 px-4" >
+                <h6 class="fw-bold ps-5">This is the default address given</h6>
+                <h6><a href="/addAddress" class=" fw-bold primaryText "> Add Address / </a> <a href="/viewAddress" class=" fw-bold primaryText "> Change Address</a></h6>
+            </div>
+            <div class="mt-5">
+                <form action="/placeOrderCoupon" method="post">
+                    <div>
+                        <label for="" class="fw-bold mb-2 offset-2 offset-lg-1">Foodora <span class="primaryText">Coupons</span></label>
+                    <class class="row text-center">
+                            <div class="col-8 offset-2 offset-lg-1">
+                        <input type="text" class="form-control" name="CouponId" required><span></span>
+                        {{#if couponNotExist}}
+                        <h6 class="text-danger">invalid Coupon</h6> 
+                        {{/if}}
+                        {{#if usedExist}}
+                        <h6 class="text-danger">you already Used One</h6>
+                        {{/if}}
+                        </div>
+                        <div class="col-2 ">
+                            <input type="submit" value="Validate" class="SeeSpan btn rounded text-white">
+                        </div>
+                    </class>
+                    </div>
+                </form>
+            </div>
+            <div class="d-flex justify-content-center mt-2 pt-5">
+                <a href="/PlaceOrder" class="btn SeeSpan text-white ">CheckOut</a>
+            </div>
+      
+    </div>
+
+    </div>
+    {{else}}
+     <div class="mx-auto w-100" style="  animation : Slide .5s ease-in-out ;">
+        <div  class="text-center mt-5 pt-3 m-0 p-0"><img src="images/ruth-georgiev-IGk3j32SrKU-unsplash.png"  height="400px " width="400px" alt="have "></div>
+        <h1 class="mt-0 p-0 text-center ">Sorry Your Cart is Empty <span class="primaryText">:</span>(</h1></div>
+    {{/if}}
+ 
+</section>

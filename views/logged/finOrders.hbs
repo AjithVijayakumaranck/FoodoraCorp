@@ -1,0 +1,91 @@
+<section>
+    <div class="px-5 py-5">
+<div class="row mt-5">
+
+    <h2 class="text-secondary fw-bold mb-4">Profile <span class="primaryText">Options</span></h2>
+    <div class="col-lg-2  col-sm-12 ">
+  <h6><a href="/userProfile" class="text-decoration-none nav-link buttonProfile my-4" style="">Dash Board <span></span> </a></h6>
+  <h6><a href="/Profile" class="text-decoration-none nav-link buttonProfile my-4">Profile<span></a></h6>
+  <h6><a href="/finalOrders" class="text-decoration-none nav-link buttonProfile primaryText my-4">Orders History<span></a></h6>
+  {{!-- <h6><a href="/addAddress" class="text-decoration-none nav-link buttonProfile my-4">Add Address<span></a></h6> --}}
+    </div>
+    <div class="col-lg-10  col-sm-12 text-end ">
+         <h2 class="text-secondary fw-bold mb-4 m">Your<span class="primaryText"> Orders</span></h2>
+
+         <div class="text-start overflow-auto">
+              <table class="table" id="OrderTable">
+            
+  <thead class=" SeeSpan text-white ">
+   
+      <th scope="col"><h6>#</h6></th>
+      <th scope="col"><h6>Date Ordered</h6></th>
+      
+      <th scope="col"><h6>Customer</h6></th>
+      <th scope="col"><h6>Address</h6></th>
+      <th scope="col"><h6>Payment Method</h6></th>
+      <th scope="col"><h6>Payment Status</h6></th>
+      <th scope="col"><h6>Order Status</h6></th>
+      <th scope="col"><h6>Total</h6></th>
+      <th scope="col"><h6>Options</h6></th>
+   
+  </thead>
+
+  <tbody class="">
+      
+{{#each ordersHistory}}
+   
+    <tr >
+      <td class="overflow-auto"><h6>{{@index}}</h6></td>
+      <td class="overflow-auto"><h6>{{this.Orderdate}}</h6></td>
+      {{!-- <td class="overflow-auto"><h6>{{this._id}}</h6></td> --}}
+      <td class="overflow-auto"><h6>{{this.address.customer}}</h6></td>
+     
+      <td class="overflow-auto"><div><h6>{{this.address.place}}</h6></div><div><h6>{{this.address.district}}</h6></div><div><h6>{{this.address.pincode}}</h6></div><div><h6 class="fw-bold">{{this.contact}}</h6></div></td>
+      <td class="overflow-auto"><h6>{{this.paymentMethod}}</h6></td>
+      <td class="overflow-auto"><h6>{{this.status}}</h6></td>
+
+      <td class="overflow-auto"><h6>{{this.orderStatus}}</h6></td>
+   
+      <td class="overflow-auto"><h6>{{this.total}}</h6></td>
+      <td class="overflow-auto pt-4"><div>
+        {{#if cancelStatus}}
+  <a href="/cancelOrder/{{this._id}}/{{this.total}}/{{this.userId}}/{{this.paymentMethod}}" class="btn nav-link SeeSpan bg-dark text-white disabled"><h6>Cancel</h6></a>
+        {{else}}
+  <a href="/cancelOrder/{{this._id}}/{{this.total}}/{{this.userId}}/{{this.paymentMethod}}/{{this.status}}" class="btn nav-link SeeSpan bg-dark text-white"><h6>Cancel</h6></a>
+  {{/if}}
+      </div>
+      <div>
+ <a href="/productsViewOrders/{{this._id}}" class="btn nav-link SeeSpan  text-white"><h6>Products</h6></a>
+      </div></td>
+      
+    </tr>
+ {{/each}}
+ 
+
+ 
+  </tbody>
+
+</table>
+</div>
+</div>
+  
+         </div>
+   
+   
+       
+
+
+
+    </div>
+  
+
+
+
+</section>
+  
+
+<script>
+  $(document).ready( function () {
+    $('#OrderTable').DataTable();
+} );
+</script>

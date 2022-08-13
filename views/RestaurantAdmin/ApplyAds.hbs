@@ -1,0 +1,117 @@
+<section class="container d-flex align-items-center justify-content-center" >
+    <div class=" ">
+        <h2 class="mx-auto text-dark fw-bold mb-2 mt-5"> <span class="primaryText">Adv Application
+        </h2>
+        <form action="/RestaurantAdmin/advRequest" method="post" enctype="multipart/form-data">
+       
+
+            <div class="row mt-5" >
+                 
+
+                
+               
+                        
+                <div class="col-12 col-lg-12 ">
+                    <label for="inputEmail4" class="form-label form-group">Adv Content<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="signupname" placeholder="Adv Name" name="advContent"
+                        onkeyup="validateCusineName()">
+                    <span id="cusineNameError"></span>
+                </div>
+
+        
+
+                <div class="mt-2 col-12 mt-4 ">
+                    <label for="inputAddress" class="form-label">Details <span class="text-danger">*</span></label>
+                    <textarea type="Email" class="form-control" id="email" placeholder="Details" name="advDetails"
+                        onkeyup="validateDetails()" rows="5"></textarea>
+                    <span id="detailError"></span>
+                </div>
+                
+                
+                </div>
+            
+               
+      
+
+                <div class="col-12 mt-4 px-0">
+                    <label for="inputAddress" class="form-label mx-0">Durarion<span class="text-danger">*</span></label>
+                    <div class="d-flex align-item-center">
+                    <input type="radio"  value="6Hours" class="form-control w-auto mr-3 ml-0" id="Duration" placeholder="Ph.no" name="duration"
+                        onkeyup="validateRadio()"> <span> <h1 class="h6">6 Hours</h1></span> 
+                         <input value="12Hours" type="radio" class="form-control  w-auto mx-3" id="Duration" placeholder="Ph.no" name="duration"
+                        onkeyup="validateRadio()"><span > <h6 class="h6">12 Hours </h6></span>
+                         <input value="24Hours" type="radio" class="form-control  w-auto mx-3" id="Duration" placeholder="Ph.no" name="duration"
+                        onkeyup="validateRadio()"><span > <h6 class="h6">24 Hours </h6></span>
+                         <input value="42Hours" type="radio" class="form-control  w-auto mx-3" id="Duration" placeholder="Ph.no" name="duration"
+                        onkeyup="validateRadio()"><span > <h6 class="h6">48 Hours </h6></span>
+                        </div>
+                        
+                    <span id="phone-error"></span>
+                </div>
+{{!-- 
+                     <div class="col-12 mt-4 px-0">
+                    <label for="inputAddress2" class="form-label">Catogory<span class="text-danger">*</span></label>
+                    <div class="d-flex align-item-center">
+                    <input type="radio" value="SouthIndian" class="form-control w-auto mr-3 ml-0" id="cusineRegion" placeholder="Ph.no" name="Region"
+                        onkeyup="validateRadio()"> <span> <h1 class="h6" >Specific </h1></span> 
+                         <input type="radio" value="NorthIndian" class="form-control w-auto mx-3" id="cusineRegion" placeholder="Ph.no" name="Region"
+                        onkeyup="validateRadio()"> <span> <h1 class="h6">North Indian</h1></span> 
+                         <input type="radio" value="Japanease" class="form-control w-auto mx-3" id="cusineRegion" placeholder="Ph.no" name="Region"
+                        onkeyup="validateRadio()"> <span> <h1 class="h6">Japanease</h1></span> 
+                         <input type="radio" value="French" class="form-control w-auto mx-3" id="cusineRegion"  placeholder="Ph.no" name="Region"
+                        onkeyup="validateRadio()"> <span> <h1 class="h6">French</h1></span> 
+                         <input type="radio" value="Italian" class="form-control w-auto mx-3" id="cusineRegion" placeholder="Ph.no" name="Region"
+                        onkeyup="validateRadio()"> <span> <h1 class="h6">Italian</h1></span> 
+                         <input type="radio" value="Korean" class="form-control w-auto mx-3" id="cusineRegion" placeholder="Ph.no" name="Region"
+                        onkeyup="validateRadio()"> <span> <h1 class="h6">Korean</h1></span> 
+                         <input type="radio" value="Chinease" class="form-control w-auto mx-3"  id="cusineRegion"  placeholder="Ph.no" name="Region"
+                        onkeyup="validateRadio()"> <span> <h1 class="h6">Chinease</h1></span> 
+                    
+                </div> --}}
+                {{!-- </div>
+
+                
+                     <div class="col-12 mt-4 mx-0 px-0">
+                    <label for="inputAddress3" class="form-label mx-0 ">Sub-Catogory<span class="text-danger">*</span></label>
+                    <div class="d-flex align-item-center">
+                    <input type="CheckBox" class="form-control w-auto mr-3" id="cusinSubCat" placeholder="Ph.no" name="SubCat"
+                        onkeyup="validateCheckBox()" value="mainCourse" <span> <h1 class="h6" >Main Course</h1></span> 
+                         <input type="CheckBox" class="form-control w-auto mx-3" id="cusinSubCat" placeholder="Ph.no" name="SubCat"
+                        onkeyup="validateCheckBox()" value="appetizer"> <span> <h1 class="h6">Appetizer</h1></span> 
+                         <input type="CheckBox" class="form-control w-auto mx-3" id="cusinSubCat" placeholder="Ph.no" name="SubCat"
+                        onkeyup="validateCheckBox()" value="desert"> <span> <h1 class="h6">Desert</h1></span> 
+                     
+                    
+                </div> --}}
+
+
+
+
+
+            {{!-- </div>
+            
+          <div class="col-12 col-lg-12 mx-0 mt-4 px-0 w-25">
+                    <label for="inputEmail4" class="form-label form-group">Price<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="signupname" placeholder="Price" name="Price"
+                        onkeyup="validatPrice()">
+                    <span id="priceError"></span>
+                </div> --}}
+            
+                <div class="col-md-12 mt-4 mx-0 px-0" >
+                    <label for="inputState" class="form-label">More Details <span class="text-danger">*</span></label>
+                    <textarea name="" class="form-control" id="userpassword" placeholder="More details.." name="Password" cols="100" rows="10"></textarea> 
+                        
+                    <span id="passsword-error"></span>
+                </div><A>                                                                                                                                                                                                                                                                       </A>
+            <div class="modal-footer">
+                <div class="mx-auto mt-2">
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" onclick="return validateSignUpForm(event)"
+                            class="btn btn-primary SeeSpan">Place your Application</button>
+                    </div>
+                    </div>
+        </form>
+
+    </div>
+</section>
+

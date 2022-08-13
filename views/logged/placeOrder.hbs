@@ -1,0 +1,91 @@
+<section>
+    <div class="container-md-fluid container-lg">
+
+        <form  id="checkOutForm">
+            <div class="row pt-5 ">
+
+                {{!-- <address> --}}
+                
+
+                    <div class="accordion col-lg-12 col-sm-12 col-md-12 pb-5" id="accordionExample">
+                        <div class="accordion-item ">
+                            <h2 class="accordion-header  primaryBg rounded" id="headingOne">
+                                <button class="accordion-button abutton" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Address
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body row">
+                                    
+                                    <input type="text" class="  text-md-center text-lg-start addressBarBorder" id="" name="customer" value="{{address.name}}">
+                                    <input type="text" class=" text-md-center text-lg-start   addressBarBorder" id="" name="houseName" value="{{address.appartment}}">
+                                    <input type="text" class=" text-md-center text-lg-start   addressBarBorder" id=""  name="place" value="{{address.place}}">
+                                    <input type="text" class="  text-md-center text-lg-start  addressBarBorder" id="" name="district" value="{{address.district}}">
+                                    <input type="text" class="text-lg-start text-md-center    addressBarBorder" id="" name="mobile" value="{{address.mobile}}">
+                                    <input type="text" class="text-lg-start text-md-center    addressBarBorder" id="" name="Pin-zip" value="{{address.pin}}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                   
+                    {{!-- <address> --}}
+                
+                        <div class="col-lg-6 pt-lg- pt-5">
+                            {{#if discountPrice}}
+                             <h1 class="pt-lg-1 pt-1 m-0 text-center text-lg-start mb-2 textColor p-0 m-0">Grand Total : ₹<span class="primaryText">{{discountPrice}}</span></h1><span>
+                               {{else}} 
+                             <h1 class="pt-lg-1 pt-1 m-0 text-center text-lg-start mb-2 textColor p-0 m-0">Grand Total : ₹<span class="primaryText">{{grossTotal}}</span></h1><span>
+                            {{/if}}
+                             </span>
+                              {{#if discountPrice}}
+                            <h6  class="pt-0  m-0 mt-2 text-center text-lg-start fw-medium text-success">discount coupon applied</h6>
+                              {{else}} 
+                            <h6  class="pt-0  m-0 mt-2 text-center text-lg-start fw-medium text-danger">discount coupon not applied</h6>
+                                 {{/if}}
+                                               {{#if discountPrice}}
+                            <h6 class="pt-0 m-0   text-center text-lg-start mt-1 text-success">Discount applied of <span class="fw-bold"
+                                    id="deliverytotal">{{discountPercentage}}%</span></h6>
+                                         {{else}} 
+                            <h6 class="pt-0 m-0   text-center text-lg-start mt-1 text-danger">Discount applied of <span class="fw-bold"
+                                    id="deliverytotal">0%</span></h6>
+                                       {{/if}}
+                            <h6 class="pt-0  m-0 mt-2 text-center text-lg-start fw-medium">food cost ₹<span class="fw-bold"
+                                    id="subtotal">{{total}}</span></h6>
+                            <h6 class="pt-0 m-0   text-center text-lg-start mt-1 ">Delivery charge ₹<span class="fw-bold"
+                                    id="deliverytotal">{{deliveryCharge}}</span></h6>
+                                       {{!-- {{#if discountPrice}}
+                            <h6 class="pt-0 m-0  mb-3 text-center text-lg-start mt-1 text-success">Discount applied of <span class="fw-bold"
+                                    id="deliverytotal">{{discountPercentage}}%</span></h6>
+                                         {{else}} 
+                            <h6 class="pt-0 m-0  mb-3 text-center text-lg-start mt-1 text-danger">Discount applied of <span class="fw-bold"
+                                    id="deliverytotal">0%</span></h6>
+                                       {{/if}} --}}
+                        </div>
+                       
+     <div class="col-lg-6 col-md-12 pt-1 px-5 rounded">
+                            <h1 class="mb-5">Payment <span class="primaryText"> Methods</span></h1>
+                            <div class="row text-start ">
+                                <input type="text" class="  text-md-center text-lg-start   addressBarBorder" id="" name="userId" value={{userId}} hidden>
+                                <div class="primaryBg bg-opacity-25 py-3 rounded mb-3">
+                                    <input type="radio" name="paymentMethod" class="mx-4  m-0 p-0"
+                                        id="paymentMethod" value="COD"><span class="h6 m-0 p-0">Cash On Delivery</span>
+                                </div>
+                                <div class="bg-secondary bg-opacity-25 py-3 rounded">
+                                    <input type="radio" name="paymentMethod" class="mx-4  m-0 p-0"
+                                        id="paymentMethod" value="onlinePayment"><span class="h6 m-0 p-0">Online Payment</span>
+                                </div>
+                            </div>
+                            <div class="text-center pt-4">
+                            <input type="submit" class="SeeSpan text-white rounded px-4 py-1" value="PlaceOrder">
+                            </div>
+                        </div>
+                        </form>
+                       
+            </div>
+    </div>
+
+</section>

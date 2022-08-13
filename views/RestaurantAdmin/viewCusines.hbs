@@ -1,0 +1,89 @@
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <h4 class="mt-0 header-title">Cusines</h4>
+                 
+                                <table id="datatable" class="table table-bordered dt-responsive nowrap " style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                    <thead style="background-color:#ff0029 !important;" class="text-white text-center">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Details</th>
+                                        <th>Veg/Non</th>
+                                        <th>Region</th>
+                                        <th>SubCat</th>
+                                        <th>Price</th>
+                                        <th>Stock</th>
+                                        <th>Delete</th>
+                                       
+                                    
+                                    </tr>
+                                    </thead>
+
+
+                                    <tbody class="text-start">
+                                        {{#each response}}
+                                    <tr>
+                                        <td>{{this.cusineName}}</td>
+                                        <td>{{this.cusineDetails}}</td>
+                                        <td>{{this.Veg}}</td>
+                                        <td>{{this.Region}}</td>
+                                       
+                                        <td>
+                                             {{this.SubCat}}
+                                             {{!-- {{#each this.SubCat}}
+                                             {{this}},
+                                        {{/each}} --}}
+                                      
+                                     
+                                        </td>
+                                        <td>₹{{this.Price}}</td>
+
+                                       
+                                            {{#if this.inStock}}
+                                            
+                                                <td><a href="/RestaurantAdmin/inStock/{{this._id}}" class="btn rounded-circle btn-success mr-2" style="width:2rem !important; height: 2rem !important; background-color: #3cff00; border:0"></a>In stock</td>    
+                                               {{else}}
+                                                   <td><a href="/RestaurantAdmin/inStock/{{this._id}}" class="btn rounded-circle btn-success mr-2"  style="width:2rem !important; height: 2rem !important; background-color: #FF6C00; border:0"></a>Out of stock</td>                                                                 
+                                            {{/if}}
+                                              <td><a href="/RestaurantAdmin/deleteCusine/{{this._id}}" class="btn rounded-circle " id="deleteConfirm" ><i class="fa-solid fa-xmark"></i></a></td>   
+                                              {{!-- <td><a href="#" class="btn rounded-circle " id="" ><i class="fa-solid fa-xmark"></i></a></td>    --}}
+                                             
+                                    </tr>
+                                    {{/each}}
+                              
+                                    
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div> <!-- end col -->
+                </div> <!-- end row -->
+
+                 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    $('#deleteConfirm').on('click',function (e)
+{
+  e.preventDefault();
+var self=$(this);
+console.log('have a nice day')
+Swal.fire({
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#ff6c00',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+  if (result.isConfirmed) {
+   
+    location.href=self.attr('href');
+  }
+})
+})
+  </script>

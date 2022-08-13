@@ -1,0 +1,73 @@
+<section class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class=" ">
+        <h2 class="mx-auto text-dark fw-bold mt-5 pt-5" style="margin-top: 15rem !important;"> Add<span class="primaryText">Admins</span>
+        <form action="/admin/addAdmin" method="post"  enctype="multipart/form-data">
+                {{!-- &nbsp;Restaurant owners</span></h2> --}}
+                          <DIV class="mr-auto">
+
+            <div class="wrapper m-0 p-0">
+              <div class="box">
+                <div class="js--image-preview"></div>
+                <div class="upload-options SeeSpan" style="    border-radius: 100% !important;
+}">
+                  <label>
+                    <input type="file" name="restauratImage" class="image-upload " style="" accept="image/*" />
+                  </label>
+                </div>
+              </div>
+          </DIV>
+            <div class="row mt-4">
+
+
+                <div class="col-12 col-lg-6">
+                    <label for="inputEmail4" class="form-label ">Owner Name</label>
+                    <input type="text" class="form-control" id="inputEmail4" placeholder="Name" name="OwnerName" required>
+                </div>
+                <div class="col-lg-6 col-12 ">
+                    <label for="inputPassword4" class="form-label">Restaurant Name</label>
+                    <input type="text" class="form-control" id="inputPassword4" placeholder="Name" id="inputPassword"
+                        name="RestaurantName" required>
+                </div>
+                <div class="mt-2 col-12">
+                    <label for="inputAddress" class="form-label">Email</label>
+                    <input type="Email" class="form-control" id="inputAddress" placeholder="Email" name="Email" required>
+                </div>
+                {{!-- <form action="/signup" method="post" id="NumberVerify">
+                    <div class="col-12 mt-4">
+                        <label for="inputAddress2" class="form-label">Phone</label>
+                        <input type="number" class="form-control" id="inputAddress2" placeholder="Ph.no" name="Phone">
+                        <input type="submit" class="SeeSpan btn text-white mt-3" value="verify"></input> <span
+                            class="ms-2" id="Verify"></span>
+                    </div>
+                </form> --}}
+
+                <div class="col-12 mt-4">
+                    <label for="inputAddress2" class="form-label">Location</label>
+                    <input type="Text" class="form-control" id="inputAddress6" placeholder="Location" name="Location" required>
+                    <p class="ms-2" id="Verify"></p>
+                    </p>
+                </div>
+                <div class="col-12 mt-4">
+                    <label for="inputAddress2" class="form-label">Phone</label>
+                    <input type="number" class="form-control" id="inputAddress2" placeholder="Ph.no" name="Phone" required>
+                    <p class="ms-2" id="Verify"></p>
+                    </p>
+                </div>
+
+
+                <div class="col-md-12 mt-4">
+                    <label for="inputState" class="form-label"> Password</label>
+                    <input type="password" class="form-control" id="inputState" placeholder="Password" name="Password" required>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <div class="mx-auto mt-2">
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary SeeSpan">Add admin</button>
+                    </div>
+        </form>
+    
+    </div>
+</section>

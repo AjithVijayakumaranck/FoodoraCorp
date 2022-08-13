@@ -1,0 +1,44 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-12 py-5">
+        <img src="/images/undraw_delivery_address_re_cjca.svg" alt="" class="img-fluid">
+      </div>
+      <div class="col-lg-6 col-12 text-center pt-5">
+        <h1 class="pt-5 pb-5">
+          Add Your <span class="primaryText">Address</span></h1>
+        <form {{#if fromProfile}} action="/addAddressProfile" {{else}} action="/addAddress" {{/if}}method="post" >
+          <div class="text-start mb-2">
+          <label for="" class="text-start"> Name</label>
+          <input type="text" class="form-control" name="name" required>
+          </div>
+          <div class="text-start mb-2">
+          <label for="" class="text-start">Appartment/HouseNo</label>
+          <input type="text" class="form-control" name="appartment" required>
+          </div>
+          <div class="text-start mb-2">
+          <label for="" class="text-start">Place</label>
+          <input type="text" class="form-control" name="place" required>
+          </div>
+          <div class="text-start mb-2">
+          <label for="" class="text-start">District</label>
+          <input type="text" class="form-control" name="district" required>
+          </div>
+          <div class="row">
+            <div class="text-start mb-2 col-lg-6">
+          <label for="" class="text-start">Phone</label>
+          <input type="number" class="form-control" name="mobile" required>
+          </div>
+          <div class="text-start mb-2 col-lg-6">
+          <label for="" class="text-start">Pin/Zip</label>
+          <input type="text" class="form-control" name="pin" required>
+          </div>
+          </div>
+          <div>
+            <input type="submit" value="Add Address" class="btn SeeSpan text-white rounded mt-4">
+          </div>
+        </form>
+      </div>
+   
+  </div>
+</section>

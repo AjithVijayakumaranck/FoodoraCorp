@@ -1,0 +1,39 @@
+<div class="row">
+    
+                    <div class="col-xl-12">
+                        <div class="card">                                
+                            <div class="card-body">
+                                <h5 class="header-title pb-3 mt-0">Coupons</h5>
+                                <div class="table-responsive">
+                                    <table id="data-table" class="table table-bordered dt-responsive nowrap text-center" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                        <thead style="background-color:#ff6c00 !important ;" class="text-white">
+                                            
+                                            <tr class="align-self-center">
+                                                <th>Index</th>
+                                                <th>First name</th>
+                                                <th>Last name</th>
+                                                <th>Email</th>
+                                                <th>Contact</th>
+                                          
+                                                <th>Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                         {{#each coupon}}
+                                            <tr>
+                                                <td>{{inc @index}}</td>
+                                                <td>
+                                                  
+                                                    {{this.couponId}}
+                                                </td>
+                                                <td>{{this.Discount}}</td>
+                                                <td>{{this.dateCreated}}</td>
+                                                <td>{{this.expiryDate}}</td>  
+                                                {{!-- /admin/deleteCoupon/{{this._id}} --}}
+                                            <td><a href="#" onclick="deleteCoupons(event,'{{this._id}}')" class="btn btn-danger SeeSpan">Delete</a></td>
+                                                 </tr>
+                                                 {{/each}}                                                              
+                                        </tbody>
+                                    </table>
+                                </div><!--end table-responsive-->
+                                
