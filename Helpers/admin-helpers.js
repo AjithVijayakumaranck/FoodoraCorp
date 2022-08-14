@@ -1,6 +1,7 @@
 const { response } = require("express");
 const collection = require("../database-config/collections");
 const db = require("../database-config/connection")
+require('dotenv').config();
 let bcrypt = require("bcrypt");
 let moment = require('moment');
 const { ObjectId } = require("mongodb");

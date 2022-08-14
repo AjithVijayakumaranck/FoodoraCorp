@@ -11,6 +11,10 @@ let session = require('express-session')
 var userRouter = require('./routes/user');
 var adminRouter = require('./routes/admin');
 var superAdmin = require('./routes/super-admin')
+require('dotenv').config();
+
+
+
 
 var app = express();
 
