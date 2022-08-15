@@ -12,7 +12,7 @@ var userRouter = require('./routes/user');
 var adminRouter = require('./routes/admin');
 var superAdmin = require('./routes/super-admin')
 require('dotenv').config();
-
+git 
 
 
 
@@ -21,7 +21,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-app.engine('hbs', hbs.engine({ extname: 'hbs', helpers: multihelpers, defaultLayout: 'layout', layoutsDir: __dirname + '/views/layout/', partialsDir: __dirname + '/views/partials/',helpers: {
+app.engine('hbs', hbs.engine({ extname: 'hbs', helpers: multihelpers, defaultLayout: 'layout', layoutsDir: __dirname + '/views/Layout/', partialsDir: __dirname + '/views/partials/',helpers: {
   inc: function (value, options) {
     return parseInt(value) + 1;
   },
