@@ -1,6 +1,6 @@
-<img src="https://homybooking.online/images/main-logo.png" width="200px" />
 
-Live : <a href="https://homybooking.online/" target="blank">https://homybooking.online</a>
+
+Live : <a href="https://homybooking.online/" target="blank">https://foodoracorp.online</a>
 
 
 ## 🚀 About Project
@@ -10,56 +10,32 @@ Live : <a href="https://homybooking.online/" target="blank">https://homybooking.
 
 #### User
   - Sign up and login with otp
-  - List of Hotel and available rooms with filter
-  - Wishlist and coupon
+  - List of foods and restaurants 
   - Book room with partial payment
   - Payment gateway’s (Razorpay, paypal)
-  - List of previous bookings
+  - List of previous  orders
   - Wallet and history
   - Profile managment
   
   
 #### Vendor
   - Signup request to admin, admin can approve or reject
-  - Add hotel’s and rooms
-  - Hotel and rooms managment
-  - Sales Report and booking managment
+  - Add foods
+  - Sales Report 
   - Withdraw amout
   - Panel with Dashbord
   
 
 #### Admin
   - Panel with Dashbord
-  - Sales Report and booking details
+  - Sales Report and order details
   - Transaction details
-  - Block and unblock hotel, vendor, user
+  - Block and unblock  vendor, user
   - Slider and coupon managment
 
 
 
-## Login Details
 
-#### Super admin login details
-
-| Username     | Password    | Role          | Link                                   |
-| :----------- | :---------- | :------------ | -------------------------------------- |
-| `superAdmin` | `admin@123` | Administrator | https://homybooking.online/super_admin |
-
-
-#### Vendor login details
-
-| Email              | Password     | Role       | Link                              |
-| :----------------- | :----------  | :--------  | --------------------------------- |
-| `vendor@gmail.com` | `vendor@123` | Sub admin | https://homybooking.online/vendor  |
-
-
-#### User register
-![image](https://user-images.githubusercontent.com/95907424/208875830-1ca97baf-b9a3-4eeb-a693-b3c58a43244d.png)
-
-#### Login with mobile otp
-![image](https://user-images.githubusercontent.com/95907424/208876026-4b6c6be4-a45c-4195-acfe-1c6d4db0a872.png)
-
-![image](https://user-images.githubusercontent.com/95907424/208876132-f6252486-0c44-434e-a939-530353bd3d83.png)
 
 
 ## Used 
@@ -79,13 +55,13 @@ Live : <a href="https://homybooking.online/" target="blank">https://homybooking.
 Clone the project
 
 ```bash
-  git clone https://github.com/Faisal-kkn/homybooking.git
+  git clone https://github.com/Ajithvijayakunmarancd/Foodoracorp
 ```
 
 Go to the project directory
 
 ```bash
-  cd homybooking
+  cd foodora
 ```
 
 
